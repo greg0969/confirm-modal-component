@@ -1,7 +1,7 @@
 {
   "name": "modal-components",
-  "version": "0.1.0",
-  "main": "dist/index.js",  "module": "dist/index.js",  "files": [ "dist", "README.md" ],  "repository": {    "type": "git",    "url": "URL_OF_YOUR_REPOSITORY"  },
+  "version": "0.2.0",
+  "main": "dist/index.js",  "module": "dist/index.js",  "files": [ "dist", "README.md" ],  "repository": {    "type": "git",    "url": "https://github.com/greg0969/confirm-modal-component"  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
