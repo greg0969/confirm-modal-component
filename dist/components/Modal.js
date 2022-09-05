@@ -7,11 +7,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireWildcard(require("react"));
+let _react = _interopRequireWildcard(require("react"));
 
-var _close = _interopRequireDefault(require("./close.svg"));
+let _close = _interopRequireDefault(require("./close.svg"));
 
-var _ModalModule = _interopRequireDefault(require("./Modal.module.css"));
+let _ModalModule = _interopRequireDefault(require("./Modal.module.css"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23,8 +23,8 @@ const Modal = _ref => {
   let {
     children,
     showIcon,
-    visible,
-    setVisible,
+    show,
+    setShow,
     closeAnywhere,
     overlayClassname,
     sectionClassname,
@@ -36,14 +36,14 @@ const Modal = _ref => {
   const modalRef = (0, _react.useRef)();
 
   const handleClickOutside = e => {
-    if (visible && closeAnywhere && !modalRef.current.contains(e.target)) {
-      setVisible(false);
+    if (show && closeAnywhere && !modalRef.current.contains(e.target)) {
+      setShow(false);
     }
   };
 
   const handleEscape = e => {
-    if (visible && e.key === "Escape" || e.key === "Esc") {
-      setVisible(false);
+    if (show && e.key === "Escape" || e.key === "Esc") {
+      setShow(false);
     }
   };
 
@@ -56,7 +56,7 @@ const Modal = _ref => {
     };
   });
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "".concat(_ModalModule.default.overlay, " ").concat(visible ? _ModalModule.default.visible : _ModalModule.default.hide, " ").concat(overlayClassname !== null && overlayClassname !== void 0 ? overlayClassname : null),
+    className: "".concat(_ModalModule.default.overlay, " ").concat(show ? _ModalModule.default.show : _ModalModule.default.hide, " ").concat(overlayClassname !== null && overlayClassname !== void 0 ? overlayClassname : null),
     style: overlayStyle !== null && overlayStyle !== void 0 ? overlayStyle : null
   }, /*#__PURE__*/_react.default.createElement("section", {
     className: "".concat(_ModalModule.default.content, " ").concat(sectionClassname !== null && sectionClassname !== void 0 ? sectionClassname : null),
@@ -67,7 +67,7 @@ const Modal = _ref => {
     alt: "close modal",
     className: "".concat(_ModalModule.default.close, " ").concat(iconClassname !== null && iconClassname !== void 0 ? iconClassname : null),
     style: iconStyle !== null && iconStyle !== void 0 ? iconStyle : null,
-    onClick: () => setVisible(false)
+    onClick: () => setShow(false)
   }), children));
 };
 
